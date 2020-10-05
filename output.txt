@@ -1,0 +1,204 @@
+/home/michael/anaconda3/envs/search_word_in_2D-array/bin/python /home/michael/PycharmProjects/search_word_in_2D-array/Search_word_in_2-D_array/main.py
+-TESTS--TESTS--TESTS--TESTS--TESTS--TESTS--TESTS--TESTS--TESTS--TESTS--TESTS-
+word = A
+Board =
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+starting_points= [(0, 0), (2, 0)]
+found --> position= (0, 0), moves = [(0, 0)]
+found --> position= (2, 0), moves = [(2, 0)]
+All possible solutions of finding A on board...
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+Word: A found on board at ...
+[(0, 0)]
+Word: A found on board at ...
+[(2, 0)]
+--------------------------------------------------------------------------------
+word = X
+Board =
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+starting_points= []
+Word: X not found on board
+--------------------------------------------------------------------------------
+word = AB
+Board =
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+starting_points= [(0, 0), (2, 0)]
+checking neighbor at 1 0
+checking neighbor at 0 1
+found --> position= (0, 0), moves = [(0, 0), [[(0, 1)]]]
+checking neighbor at 1 0
+checking neighbor at 2 1
+found --> position= (2, 0), moves = []
+All possible solutions of finding AB on board...
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+Word: AB found on board at ...
+[(0, 0), [[(0, 1)]]]
+--------------------------------------------------------------------------------
+word = ABC
+Board =
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+starting_points= [(0, 0), (2, 0)]
+checking neighbor at 1 0
+checking neighbor at 0 1
+checking neighbor at 1 1
+checking neighbor at 0 0
+checking neighbor at 0 2
+found --> position= (0, 0), moves = [(0, 0), [[(0, 1), [[(0, 2)]]]]]
+checking neighbor at 1 0
+checking neighbor at 2 1
+found --> position= (2, 0), moves = []
+All possible solutions of finding ABC on board...
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+Word: ABC found on board at ...
+[(0, 0), [[(0, 1), [[(0, 2)]]]]]
+--------------------------------------------------------------------------------
+word = ABCPEDFBA
+Board =
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+starting_points= [(0, 0), (2, 0)]
+checking neighbor at 1 0
+checking neighbor at 0 1
+checking neighbor at 1 1
+checking neighbor at 0 0
+checking neighbor at 0 2
+checking neighbor at 1 2
+checking neighbor at 0 2
+checking neighbor at 2 2
+checking neighbor at 1 2
+checking neighbor at 2 1
+checking neighbor at 1 1
+checking neighbor at 0 1
+checking neighbor at 1 1
+checking neighbor at 0 0
+checking neighbor at 0 2
+checking neighbor at 2 1
+checking neighbor at 1 0
+checking neighbor at 1 2
+checking neighbor at 2 0
+checking neighbor at 2 2
+checking neighbor at 1 1
+checking neighbor at 0 1
+found --> position= (0, 0), moves = [(0, 0), [[(0, 1), [[(0, 2), [[(1, 2), [[(2, 2), [[(2, 1), [[(1, 1), [[(0, 1), [[(0, 0)]]]]]]]]]]]]]]]]]
+checking neighbor at 1 0
+checking neighbor at 2 1
+found --> position= (2, 0), moves = []
+All possible solutions of finding ABCPEDFBA on board...
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+Word: ABCPEDFBA found on board at ...
+[(0, 0), [[(0, 1), [[(0, 2), [[(1, 2), [[(2, 2), [[(2, 1), [[(1, 1), [[(0, 1), [[(0, 0)]]]]]]]]]]]]]]]]]
+--------------------------------------------------------------------------------
+Palindrom case: can backup on itself...
+word = ABCBA
+Board =
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+starting_points= [(0, 0), (2, 0)]
+checking neighbor at 1 0
+checking neighbor at 0 1
+checking neighbor at 1 1
+checking neighbor at 0 0
+checking neighbor at 0 2
+checking neighbor at 1 2
+checking neighbor at 0 1
+checking neighbor at 1 1
+checking neighbor at 0 0
+checking neighbor at 0 2
+found --> position= (0, 0), moves = [(0, 0), [[(0, 1), [[(0, 2), [[(0, 1), [[(0, 0)]]]]]]]]]
+checking neighbor at 1 0
+checking neighbor at 2 1
+found --> position= (2, 0), moves = []
+All possible solutions of finding ABCBA on board...
+A(0,0), B(0,1), C(0,2),
+S(1,0), F(1,1), P(1,2),
+A(2,0), D(2,1), E(2,2),
+Word: ABCBA found on board at ...
+[(0, 0), [[(0, 1), [[(0, 2), [[(0, 1), [[(0, 0)]]]]]]]]]
+--------------------------------------------------------------------------------
+More Complex case:  New Board, Multiple paths, two starting points, five paths from A to E...
+Note: output is a tree structure difficult to read ...output could be much improved!
+word = ABCDE
+Board =
+A(0,0), B(0,1), C(0,2),
+B(1,0), C(1,1), D(1,2),
+A(2,0), D(2,1), E(2,2),
+starting_points= [(0, 0), (2, 0)]
+checking neighbor at 1 0
+checking neighbor at 0 0
+checking neighbor at 2 0
+checking neighbor at 1 1
+checking neighbor at 0 1
+checking neighbor at 2 1
+checking neighbor at 1 1
+checking neighbor at 2 0
+checking neighbor at 2 2
+checking neighbor at 1 0
+checking neighbor at 1 2
+checking neighbor at 0 2
+checking neighbor at 2 2
+checking neighbor at 1 1
+checking neighbor at 0 1
+checking neighbor at 1 1
+checking neighbor at 0 1
+checking neighbor at 2 1
+checking neighbor at 1 1
+checking neighbor at 2 0
+checking neighbor at 2 2
+checking neighbor at 1 0
+checking neighbor at 1 2
+checking neighbor at 0 2
+checking neighbor at 2 2
+checking neighbor at 1 1
+checking neighbor at 0 0
+checking neighbor at 0 2
+checking neighbor at 1 2
+checking neighbor at 0 2
+checking neighbor at 2 2
+checking neighbor at 1 1
+checking neighbor at 0 1
+found --> position= (0, 0), moves = [(0, 0), [[(1, 0), [[(1, 1), [[(2, 1), [[(2, 2)]]], [(1, 2), [[(2, 2)]]]]]]], [(0, 1), [[(1, 1), [[(2, 1), [[(2, 2)]]], [(1, 2), [[(2, 2)]]]]], [(0, 2), [[(1, 2), [[(2, 2)]]]]]]]]]
+checking neighbor at 1 0
+checking neighbor at 0 0
+checking neighbor at 2 0
+checking neighbor at 1 1
+checking neighbor at 0 1
+checking neighbor at 2 1
+checking neighbor at 1 1
+checking neighbor at 2 0
+checking neighbor at 2 2
+checking neighbor at 1 0
+checking neighbor at 1 2
+checking neighbor at 0 2
+checking neighbor at 2 2
+checking neighbor at 1 1
+checking neighbor at 2 1
+found --> position= (2, 0), moves = [(2, 0), [[(1, 0), [[(1, 1), [[(2, 1), [[(2, 2)]]], [(1, 2), [[(2, 2)]]]]]]]]]
+All possible solutions of finding ABCDE on board...
+A(0,0), B(0,1), C(0,2),
+B(1,0), C(1,1), D(1,2),
+A(2,0), D(2,1), E(2,2),
+Word: ABCDE found on board at ...
+[(0, 0), [[(1, 0), [[(1, 1), [[(2, 1), [[(2, 2)]]], [(1, 2), [[(2, 2)]]]]]]], [(0, 1), [[(1, 1), [[(2, 1), [[(2, 2)]]], [(1, 2), [[(2, 2)]]]]], [(0, 2), [[(1, 2), [[(2, 2)]]]]]]]]]
+Word: ABCDE found on board at ...
+[(2, 0), [[(1, 0), [[(1, 1), [[(2, 1), [[(2, 2)]]], [(1, 2), [[(2, 2)]]]]]]]]]
+--------------------------------------------------------------------------------
+
+Process finished with exit code 0
